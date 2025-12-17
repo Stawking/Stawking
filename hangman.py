@@ -148,8 +148,8 @@ def gameloop():
         else:
             print("Invalid guess!")
     
-    if game.lives > 0: print("YOU WIN!!!!")
-    else: print("You lost.")
+    if game.lives > 0: print("\n YOU WIN!!!!")
+    else: print(f"\n You lost. The word was: {game.word}")
     print(ASCII_ART[game.lives])
     print(f"        {game.score}\n")
 
