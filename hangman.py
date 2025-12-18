@@ -1,5 +1,5 @@
-import linecache
-import random
+import linecache as lc
+import random as rd
 import copy
 
 """
@@ -98,9 +98,9 @@ class WordList:
     
     @classmethod
     def getword(cls) -> str:  
-        random_line = random.randrange(1, cls.LINE_COUNT)
-        word = linecache.getline(cls.FILE_PATH, random_line)
-        linecache.clearcache()
+        random_line = rd.randrange(1, cls.LINE_COUNT)
+        word = lc.getline(cls.FILE_PATH, random_line)
+        lc.clearcache()
         #linecache module does not raise an exception on its own, instead returning ''
         if not word: raise FileNotFoundError("Line could not be found")
         return word.upper().strip()
@@ -162,6 +162,7 @@ def main():
     gameloop()
     while input("Play Again? Enter 'Y': ").upper() == 'Y':
         gameloop()
-        
+
+
 if __name__ == "__main__":
     main()
